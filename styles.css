@@ -45,7 +45,7 @@ section {
 .hero {
   position: relative; /* Needed for overlay */
   /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+  background-image: url("./img/water.jpeg");
   background-size: cover;      /* Make the image cover the whole area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
@@ -77,24 +77,25 @@ section {
 }
 
 /* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
+.story{
+  background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url("./img/bluewater.jpeg") center/cover no-repeat;
+  color: #fff;
   text-align: center;
-  padding: 30px 20px;
+  padding: 60px 20px;
+  border-radius: 12px
 }
 
 /* Add accent color to section headings */
 h2 {
-  color: #2E9DF7; /* Primary blue */
+  color: #fff; /* Primary blue */
   margin-top: 0;
   font-weight: bold;
 }
 
 /* Call-to-Action Section Styles */
 .call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
+  background-color: #75bcdd; /* Primary Yellow */
+  color: #fff;
   text-align: center;
   padding: 30px 20px;
 }
@@ -111,7 +112,7 @@ h2 {
 /* Donate Button Styles */
 .donate-button {
   display: inline-block;
-  background-color: #4FCB53; /* Green */
+  background-color: #FFC907; /* Green */
   color: #fff;
   padding: 14px 32px;
   text-decoration: none;
@@ -127,7 +128,7 @@ h2 {
 
 /* Change button color when hovered */
 .donate-button:hover {
-  background-color: #159A48; /* Dark Green */
+  background-color: #FFC907; /* Dark Green */
   transform: translateY(-2px) scale(1.04); /* Slight lift */
 }
 
@@ -196,3 +197,88 @@ section {
     width: 300px;
   }
 }
+/* ====== Minimal additions to support layout, header/nav, footer ====== */
+
+/* A simple content wrapper so sections aren’t full-bleed */
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Smooth anchor scrolling */
+html{ scroll-behavior: smooth; }
+
+/* Header + nav */
+.site-header{
+  position: sticky; top: 0; z-index: 10;
+  background: #ffffffcc; /* translucent white */
+  backdrop-filter: saturate(140%) blur(6px);
+  border-bottom: 1px solid #eaeaea;
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 10px 0;
+}
+.brand{ display:flex; align-items:center; gap:.55rem; color:#222; text-decoration:none; }
+.brand-badge{
+  width: 34px; height: 34px; border-radius: 50%;
+  display:grid; place-items:center;
+  background:#FFC907; color:#000; font-weight:800;
+}
+.brand-name{ font-weight: 800; letter-spacing:.2px; }
+.nav{ display:flex; gap: 14px; align-items:center; }
+.nav a{
+  color:#222; text-decoration:none; padding:6px 8px; border-radius:8px;
+}
+.nav a:hover{ background:#ecf3fb; }
+.donate-link{
+  background:#FFC907; color:#000; padding:6px 12px; border-radius:8px; font-weight:700;
+}
+
+/* Stats band */
+.stats-band{
+  background:#FFC907; color:#fff; padding:28px 0; border-radius:12px;
+  margin: 24px 10px;
+}
+.stats-grid{
+  display:grid; gap:12px; text-align:center;
+}
+@media (min-width: 760px){
+  .stats-grid{ grid-template-columns: repeat(4, 1fr); }
+}
+.stat {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+}
+
+
+.stat strong{ display:block; font-size:1.4rem; }
+.stat span{ color:#e5e7eb; font-size:.95rem; }
+
+/* Footer */
+/* Footer */
+.site-footer{
+  background: #111827;
+  color: #e5e7eb;   /* default text stays gray */
+  padding: 28px 0;
+  margin: 24px 0 0;
+}
+
+.footer-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* NEW: make brand text white */
+.site-footer .brand-name {
+  color: #fff;
+}
+
+
+/* Make the “Donate Now” button in hero center nicely on wide screens */
+.hero .container{ text-align:center; }
